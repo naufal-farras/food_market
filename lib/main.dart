@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food Market',
-      home: SignInPage(),
+      home: MainPage(),
     );
   }
 }
