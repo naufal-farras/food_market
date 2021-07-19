@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_market/models/models.dart';
 import 'package:food_market/ui/pages/pages.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food Market',
-      home: MainPage(),
+      home: SuccessSignUpPage(),
     );
   }
 }
