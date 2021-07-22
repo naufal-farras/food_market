@@ -21,7 +21,6 @@ class User extends Equatable {
     this.picturePath,
   });
   @override
-  // TODO: implement props
   List<Object> get props =>
       [id, name, email, address, houseNumber, phoneNumber, city, picturePath];
 }

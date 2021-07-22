@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_market/models/models.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_market/cubit/cubit.dart';
+// import 'package:food_market/models/models.dart';
 import 'package:food_market/ui/pages/pages.dart';
 import 'package:get/get.dart';
 
@@ -8,10 +10,17 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Food Market',
-      home: SuccessSignUpPage(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => UserCubit()),
+        BlocProvider(create: (_) => FoodCubit()),
+        BlocProvider(create: (_) => TransactionCubit())
+      ],
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Food Market',
+        home: SignInPage(),
+      ),
     );
   }
 }
